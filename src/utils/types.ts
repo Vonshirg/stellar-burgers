@@ -37,4 +37,43 @@ export type TUser = {
   name: string;
 };
 
+export type TBurgerConstructorState = {
+  bun: TIngredient | null;
+  ingredients: TIngredient[];
+  order: TOrder | null;
+  orders: TOrder[];
+  RequestState: RequestState;
+};
+
+export enum RequestState {
+  Pending = 'Pending',
+  Success = 'Success',
+  Failed = 'Failed',
+  Loading = 'Loading'
+}
+
+export type TFeedState = {
+  orders: TOrder[];
+  total: number;
+  totalToday: number;
+  status: RequestState;
+};
+
+export type TIngredientState = {
+  data: TIngredient[];
+  status: RequestState;
+};
+
+export interface TUserState {
+  error: string | null;
+  isAuthChecked: boolean;
+  user: TUser | null;
+  loginRequest: boolean;
+  RequestState: RequestState;
+}
+export type ProtectedRouteProps = {
+  onlyUnAuth?: boolean;
+  children: React.ReactElement;
+};
+
 export type TTabMode = 'bun' | 'sauce' | 'main';
