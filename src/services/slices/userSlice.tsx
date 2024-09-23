@@ -138,4 +138,4 @@ export const {
 } = userSlice.selectors;
 
 export default userSlice.reducer;
-123
+123;

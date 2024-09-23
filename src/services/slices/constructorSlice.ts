@@ -125,9 +125,7 @@ export const {
   ordersDataSelector
 } = сonstructorSlice.selectors;
 
-
 export default сonstructorSlice.reducer;
-
 
 export const makeOrder = createAsyncThunk(
   'order/makeOrder',
