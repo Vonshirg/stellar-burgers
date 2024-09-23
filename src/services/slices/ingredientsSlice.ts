@@ -7,7 +7,7 @@ export const getIngredients = createAsyncThunk<TIngredient[]>(
   async () => await getIngredientsApi()
 );
 
-const initialState: TIngredientState = {
+export const initialState: TIngredientState = {
   data: [],
   status: RequestState.Pending
 };

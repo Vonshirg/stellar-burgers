@@ -13,7 +13,7 @@ import {
 } from '@utils-types';
 import { getOrdersApi, orderBurgerApi, getOrderByNumberApi } from '@api';
 
-const initialState: TBurgerConstructorState = {
+export const initialState: TBurgerConstructorState = {
   bun: null,
   ingredients: [],
   order: null,
@@ -125,9 +125,7 @@ export const {
   ordersDataSelector
 } = сonstructorSlice.selectors;
 
-
 export default сonstructorSlice.reducer;
-
 
 export const makeOrder = createAsyncThunk(
   'order/makeOrder',

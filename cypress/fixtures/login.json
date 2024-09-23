@@ -1,0 +1,6 @@
+{
+  "success": true,
+  "accessToken": "not not",
+  "refreshToken": "not",
+  "user": { "email": "not@mail.ru", "name": "notName" }
+}
