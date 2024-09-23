@@ -68,7 +68,8 @@ type TFeedsResponse = TServerResponse<{
 }>;
 
 type TOrdersResponse = TServerResponse<{
-  data: TOrder[];
+  // data: TOrder[];
+  orders: TOrder[];
 }>;
 
 export const getIngredientsApi = () =>
@@ -88,7 +89,8 @@ export const getFeedsApi = () =>
     });
 
 export const getOrdersApi = () =>
-  fetchWithRefresh<TFeedsResponse>(`${URL}/orders`, {
+  // fetchWithRefresh<TFeedsResponse>(`${URL}/orders`, {
+  fetchWithRefresh<TOrdersResponse>(`${URL}/orders`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
