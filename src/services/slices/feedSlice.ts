@@ -7,7 +7,7 @@ export const getFeed = createAsyncThunk('feed/getFeed', async () => {
   return feed;
 });
 
-const initialState: TFeedState = {
+export const initialState: TFeedState = {
   status: RequestState.Pending,
   orders: [],
   total: 0,

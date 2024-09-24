@@ -51,6 +51,12 @@ const ProtectedRoute: FC<ProtectedRouteProps> = ({ onlyUnAuth, children }) => {
 };
 
 const App: FC = () => {
+  const orderNumber = useSelector(
+    (state) => state.burgerConstructor.order?.number
+  );
+  const number = orderNumber
+    ? '#' + String(orderNumber).padStart(6, '0')
+    : 'загрузка';
   const location = useLocation();
   const background = location.state?.background;
   const navigate = useNavigate();
@@ -70,7 +76,7 @@ const App: FC = () => {
       path: '/feed/:number',
       element: (
         <Modal
-          title={'Информация о заказе'}
+          title={number}
           onClose={() => {
             dispatch(resetOrder());
             handleModalClose();
@@ -83,7 +89,7 @@ const App: FC = () => {
     {
       path: '/ingredients/:id',
       element: (
-        <Modal title={'Подробности ингредиента'} onClose={handleModalClose}>
+        <Modal title={'Детали ингредиента'} onClose={handleModalClose}>
           <IngredientDetails />
         </Modal>
       )

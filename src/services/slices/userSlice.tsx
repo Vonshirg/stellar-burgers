@@ -51,7 +51,7 @@ export const updateUser = createAsyncThunk(
   }
 );
 
-const initialState: TUserState = {
+export const initialState: TUserState = {
   user: null,
   loginRequest: false,
   error: null,
@@ -79,6 +79,7 @@ export const userSlice = createSlice({
       })
       .addCase(login.pending, (state) => {
         state.RequestState = RequestState.Loading;
+        state.error = null;
       })
       .addCase(login.fulfilled, (state, action) => {
         state.user = action.payload;
@@ -96,6 +97,10 @@ export const userSlice = createSlice({
         state.user = action.payload;
         state.RequestState = RequestState.Success;
         state.isAuthChecked = true;
+      })
+      .addCase(getUser.rejected, (state, action) => {
+        state.RequestState = RequestState.Failed;
+        state.error = action.error.message || 'Error';
       })
       .addCase(updateUser.pending, (state) => {
         state.RequestState = RequestState.Loading;

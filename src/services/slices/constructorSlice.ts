@@ -13,7 +13,7 @@ import {
 } from '@utils-types';
 import { getOrdersApi, orderBurgerApi, getOrderByNumberApi } from '@api';
 
-const initialState: TBurgerConstructorState = {
+export const initialState: TBurgerConstructorState = {
   bun: null,
   ingredients: [],
   order: null,
