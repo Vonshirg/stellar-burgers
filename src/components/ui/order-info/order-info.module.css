@@ -1,7 +1,13 @@
 .wrap {
   margin: 0 auto;
   width: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центрирует вертикально */
+
+  min-height: 70vh; /* Высота контейнера на всю высоту экрана */
 }
+
 .number {
   text-align: center;
 }
@@ -70,7 +76,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  width: 100%;
 }
+
 .total {
   margin-left: auto;
 }
